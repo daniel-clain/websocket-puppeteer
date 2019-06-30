@@ -4,5 +4,5 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   verbose: true,
-  testPathPattern: './source-code/tests/gui-tests/**/*.test.ts'
+  rootDir: '../source-code/tests/gui-tests/.',
 }

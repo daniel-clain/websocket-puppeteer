@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile.client": "webpack --watch --config webpack.client.config.js",
-    "compile.server": "webpack --watch --config webpack.server.config.js",
-    "compile.all": "yarn compile.client && yarn compile.server",
+    "compile.client": "webpack --watch --config config/webpack.client.config.js",
+    "compile.server": "webpack --watch --config config/webpack.server.config.js",
+    "compile.all": "npm-run-all --parallel compile.client compile.server",
     "run.server": "nodemon --inspect compiled-code/server/server.js",
-    "run.gui-tests": "jest --findRelatedTests ./source-code/tests/gui-tests",
-    "run.automated-scenarios": "jest --config jest.config.automated-scenarios.js"
+    "run.gui-tests": "jest --config config/jest.config.gui-test.js",
+    "run.automated-scenarios": "jest --config config/jest.config.automated-scenarios.js"
   },
   "author": "",
   "license": "ISC",
@@ -41,6 +41,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "html-webpack-plugin": "^3.2.0",
     "jest-puppeteer": "^4.2.0",
+    "npm-run-all": "^4.1.5",
     "source-map-loader": "^0.2.4",
     "typescript": "^3.5.1",
     "webpack-cli": "^3.3.5"

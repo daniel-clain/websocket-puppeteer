@@ -25,7 +25,7 @@
       "name": "GUI Tests",
       "args": [
         "--runInBand",
-        "--config=${workspaceFolder}/jest.gui-tests.config.js"
+        "--config=jest.config.gui-tests.js"
       ],
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
       "console": "integratedTerminal"
@@ -36,7 +36,7 @@
       "name": "Automated Scenarios",
       "args": [
         "--runInBand",
-        "--config=jest.automated-scenarios.config.js"
+        "--config=jest.config.automated-scenarios.js"
       ],
       "program": "${workspaceFolder}/node_modules/jest/bin/jest",
       "console": "integratedTerminal",

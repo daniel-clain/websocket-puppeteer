@@ -4,6 +4,6 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   verbose: true,
-  rootDir: 'source-code/automated-scenarios/.',
+  rootDir: '../source-code/automated-scenarios/.',
   setupFilesAfterEnv: ['<rootDir>/jest-timeout.js']
 }

@@ -5,7 +5,7 @@ module.exports = {
   mode: 'production',
   entry: './source-code/client/client.tsx',
   output:{
-    path: path.resolve(__dirname, './compiled-code/client/'),
+    path: path.resolve(__dirname, './../compiled-code/client/'),
     filename: "client.js"
   },
   resolve: {

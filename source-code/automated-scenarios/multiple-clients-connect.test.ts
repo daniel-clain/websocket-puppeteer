@@ -23,21 +23,18 @@ beforeEach(async () => {
 afterEach(async () => {
   console.log('after');
   await Promise.all(browsers.map(async obj => {
-    await obj.page.close()
     await obj.browser.close()
   }))
 })  
 
 const allPagesWait = async () => {
-  await Promise.all(browsers.map(obj => obj.page.waitFor(10000)))
+  await Promise.all(browsers.map(obj => obj.page.waitFor(5000)))
 }
 
 test(`automating 4 players entereing thier name and becoming connected`, async () => {
-  console.log('browsers length', browsers.length);
   await Promise.all(browsers.map(async (obj, i) => {
     await enterNameAndSubmit(obj.page, playerNames[i])
   }))
-  console.log('cunt hook');
   await allPagesWait()
   return expect('dick').toBe('dick')
 })

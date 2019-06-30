@@ -7,7 +7,7 @@ module.exports = {
     './source-code/server/server.ts'
   ],
   output: {
-    path: __dirname + "/compiled-code/server",
+    path: __dirname + "./../compiled-code/server",
     filename: 'server.js'
   },
   devtool: "source-map-loader",
