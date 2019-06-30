@@ -34,7 +34,7 @@ export default class ConnectedPlayersList extends React.Component<Props>{
     const {connectedPlayers} = this.state
     return (
       <PlayerListStyle>
-        <h4>Connected Players</h4>
+        <h4>Connected Players Love Penis</h4>
         {connectedPlayers.map((player: Player) => 
           <div className='player_tile'>
             <div className='player_tile__name'>{player.name}</div>

@@ -1,11 +1,14 @@
-import {Browser, Page} from 'puppeteer';
+
 import setup from '../tests/gui-tests/steps/setup';
-import ConnectionStates from '../types/connection-states';
 import enterNameAndSubmit from '../tests/gui-tests/steps/enter-name-and-submit';
+import { Page, Browser } from 'puppeteer';
 
-
-const playerNames = ['Frank', 'Dave', 'Steve', 'Charles']
-const browsers: {page: Page, browser: Browser}[] = []
+interface BrowserObj{
+  page: Page
+  browser: Browser
+}
+const playerNames: string[] = ['Frank', 'Dave', 'Steve', 'Charles']
+const browsers: BrowserObj[] = []
 
 beforeEach(async () => {
   const windowDimensions = {width: 500, height: 500}

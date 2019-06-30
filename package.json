@@ -6,10 +6,10 @@
   "scripts": {
     "compile.client": "webpack --watch --config webpack.client.config.js",
     "compile.server": "webpack --watch --config webpack.server.config.js",
-    "compile.all": "yarn compile.client & yarn compile.server",
+    "compile.all": "yarn compile.client && yarn compile.server",
     "run.server": "nodemon --inspect compiled-code/server/server.js",
     "run.gui-tests": "jest --findRelatedTests ./source-code/tests/gui-tests",
-    "run.automated-scenarios": "jest --runTestsByPath ./source-code/automated-scenarios/*.test.ts"
+    "run.automated-scenarios": "jest --config jest.config.automated-scenarios.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "expect-puppeteer": "^4.1.1",
     "express": "^4.17.1",
     "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
     "puppeteer": "^1.18.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
