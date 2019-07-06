@@ -1,11 +1,11 @@
 
 import * as socketio from 'socket.io'
 
-import {Server, Socket} from 'socket.io'
 import Player from '../interfaces/player';
 import { ClientToServer } from '../interfaces/client-to-server.interface';
 import { ServerToClient } from '../interfaces/server-to-client.interface';
 import ServerPlayer from '../interfaces/server-player';
+import { Server, Socket } from 'socket.io';
 
 export default class ServerWebsocketService {
   websocketServer: Server
