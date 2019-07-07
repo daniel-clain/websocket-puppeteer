@@ -1,15 +1,12 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './source-code/client/client.tsx',
   output:{
-    path: path.resolve(__dirname, './../compiled-code/client/'),
+    path: __dirname + "./../compiled-code/client",
     filename: "client.js"
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js']
   },
   devtool: 'source-map',
   module: {
@@ -18,18 +15,20 @@ module.exports = {
         test: /\.ts|tsx?$/,
         loader: 'awesome-typescript-loader',
         options: {
-            configFileName: 'config/tsconfig.json'
-        },
-      },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+            configFileName: 'config/tsconfig.json',
+            reportFiles: [ // need otherwise will compile server and node_modules
+              "./source-code/client/**/*"
+            ]
+        }
+      }
     ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'] //js needed for styled components that are js files
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './source-code/client/index.html'
     })
-  ],
-  performance: {
-    hints: false
-  }
+  ]
 };

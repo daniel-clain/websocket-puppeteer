@@ -3,9 +3,7 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   mode: "development",
-  entry: [
-    './source-code/server/server.ts'
-  ],
+  entry: './source-code/server/server.ts',
   output: {
     path: __dirname + "./../compiled-code/server",
     filename: 'server.js'
@@ -18,8 +16,11 @@ module.exports = {
         test: /\.ts?$/,
         loader: 'awesome-typescript-loader',
         options: {
-            configFileName: 'config/tsconfig.json'
-        },
+            configFileName: 'config/tsconfig.json',
+            reportFiles: [
+              "./source-code/server/**/*"
+            ]
+        }
       }
     ]
   },
